@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- CRM Lead Form Inheritance -->
+    <record id="crm_lead_form_inherit_mindsynth" model="ir.ui.view">
+    <field name="name">crm.lead.form.inherit.mindsynth</field>
+    <field name="model">crm.lead</field>
+    <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+    <field name="arch" type="xml">
+
+        <!-- Existing custom fields -->
+        <xpath expr="//field[@name='partner_id']" position="after">
+
+            <field name="customer_reference" readonly="1"/>
+
+            <field name="expected_budget"/>
+
+            <field name="project_category"/>
+
+        </xpath>
+
+        <!-- Change Opportunity Label -->
+        <xpath expr="//field[@name='name']" position="attributes">
+            <attribute name="string">Opportunity Title</attribute>
+        </xpath>
+
+        <!-- Change Won Button Text -->
+        <xpath expr="//button[@name='action_set_won_rainbowman']" position="attributes">
+            <attribute name="string">Mark as Won</attribute>
+        </xpath>
+
+    </field>
+</record>
+
+</odoo>
