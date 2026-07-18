@@ -9,11 +9,15 @@
     <field name="arch" type="xml">
 
         <!-- Existing custom fields -->
-        <xpath expr="//field[@name='partner_id']" position="after">
+        <xpath expr="//group[@name='opportunity_partner']/div[field[@name='phone']]" position="after">
 
             <field name="customer_reference" readonly="1"/>
 
             <field name="expected_budget"/>
+
+        </xpath>
+
+        <xpath expr="//field[@name='tag_ids']" position="after">
 
             <field name="project_category"/>
 
